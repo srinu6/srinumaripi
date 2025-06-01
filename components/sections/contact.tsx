@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -19,17 +19,56 @@ import {
   Youtube,
   Send
 } from "lucide-react";
+import { toast } from "sonner";
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      toast.success("Message sent successfully! I'll get back to you soon.");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      toast.error("Failed to send message. Please try again later.");
+      console.error("Error sending message:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // In a real implementation, this would handle form submission
-    alert('Thank you for your message! I will get back to you soon.');
   };
 
   return (
@@ -146,8 +185,11 @@ export default function Contact() {
                       </label>
                       <Input
                         id="name"
-                        placeholder="Your name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         required
+                        placeholder="Your name"
                       />
                     </div>
                     <div className="space-y-2">
@@ -156,9 +198,12 @@ export default function Contact() {
                       </label>
                       <Input
                         id="email"
+                        name="email"
                         type="email"
-                        placeholder="Your email"
+                        value={formData.email}
+                        onChange={handleChange}
                         required
+                        placeholder="your.email@example.com"
                       />
                     </div>
                   </div>
@@ -180,15 +225,21 @@ export default function Contact() {
                     </label>
                     <Textarea
                       id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
                       placeholder="Write your message here"
                       rows={5}
-                      required
                     />
                   </div>
 
-                  <Button type="submit" className="w-full">
-                    Send Message
-                    <Send className="ml-2 h-4 w-4" />
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>

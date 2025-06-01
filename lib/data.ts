@@ -4,7 +4,14 @@ export const personalData = {
   email: "srinumaripi.nitsri@gmail.com", // Replace with actual email
   phone: "+91-9014326315", // Replace with actual phone
   location: "Hyderabad, India", // Replace with actual location
-  about: "Senior Software Engineer with extensive experience in full-stack development, specializing in building scalable Web & Mobile applications and creating educational content. Passionate about solving complex problems and sharing knowledge with the developer community.",
+  about: `Results-driven Full Stack Developer with 5 years of experience building and
+deploying scalable web and mobile applications. Successfully published
+production-ready apps to Play Store, developed SEO-friendly web apps, and
+deployed high-performance backend services. Proficient in React, React
+Native, Next.js, Node.js, and Express.js, with hands-on experience in AWS
+for cloud deployments and infrastructure management. Passionate about
+delivering clean, maintainable code and building end-to-end solutions that are
+user-centric and business-focused.`,
   socialLinks: {
     github: "https://github.com/srinu6", // Replace with actual GitHub
     linkedin: "https://linkedin.com/in/srinuvasarao-maripi", // Replace with actual LinkedIn
@@ -19,6 +26,7 @@ export const skillsData = [
     category: "Frontend",
     skills: [
       { name: "React.js", level: 95 },
+      { name: "React Native", level: 95 },
       { name: "Next.js", level: 95 },
       { name: "TypeScript", level: 95 },
       { name: "JavaScript", level: 95 },
@@ -43,7 +51,6 @@ export const skillsData = [
       { name: "AWS", level: 80 },
       { name: "Git", level: 90 },
       { name: "CI/CD", level: 90 },
-      { name: "Testing", level: 90 },
       { name: "Performance Optimization", level: 90 }
     ]
   }
@@ -52,9 +59,19 @@ export const skillsData = [
 export const projectsData = [
   {
     id: 1,
+    title: "GrabYourMeals",
+    description: "A food delivery platform covering both Web, Mobile apps",
+    image: "https://grabyourmeals.com/GrabYourMealsLogo.png",
+    tags: ["React Native", "Next.js", "TailwindCSS", "Node.js", "ExpressJS", "MongoDB"],
+    liveUrl: "https://www.lychoseeds.com/",
+    codeUrl: "#", // Replace with actual GitHub repo
+    featured: true
+  },
+  {
+    id: 1,
     title: "Lycho Seeds",
     description: "An e-commerce platform for organic seeds with detailed product information",
-    image: "https://images.pexels.com/photos/7728083/pexels-photo-7728083.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "https://www.lychoseeds.com/lychoseeds.png",
     tags: ["Next.js", "React", "TailwindCSS", "Node.js", "MongoDB"],
     liveUrl: "https://www.lychoseeds.com/",
     codeUrl: "#", // Replace with actual GitHub repo
@@ -64,7 +81,7 @@ export const projectsData = [
     id: 2,
     title: "Glory Divine Gallery",
     description: "A modern Christian products store with advanced filtering",
-    image: "https://images.pexels.com/photos/20384/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "https://glorydivinegallery.vercel.app/logo.png",
     tags: ["Next.js", "React", "TailwindCSS", "Node.js", "MongoDB", "AWS"],
     liveUrl: "https://glorydivinegallery.vercel.app/",
     codeUrl: "#", // Replace with actual GitHub repo
@@ -74,21 +91,11 @@ export const projectsData = [
     id: 3,
     title: "Rowdy Coders",
     description: "Educational platform providing coding tutorials, articles, and resources for developers of all skill levels.",
-    image: "https://images.pexels.com/photos/879109/pexels-photo-879109.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: "https://rowdycoders.com/wp-content/uploads/logo.png",
     tags: ["Wordpress"],
     liveUrl: "https://rowdycoders.com/",
     codeUrl: "#", // Replace with actual GitHub repo
     featured: true
-  },
-  {
-    id: 4,
-    title: "Weather Dashboard",
-    description: "Interactive weather application with real-time updates, forecasts, and location-based services.",
-    image: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    tags: ["React", "JavaScript", "API Integration", "CSS"],
-    liveUrl: "#", // Replace with actual URL
-    codeUrl: "#", // Replace with actual GitHub repo
-    featured: false
   }
 ];
 
@@ -98,11 +105,11 @@ export const contentCreationData = {
     url: "https://www.youtube.com/@RowdyCoders",
     subscribers: "6K+", // Replace with actual number
     videos: "90+", // Replace with actual number
-    description: "Educational content focused on web development tutorials, coding tips, and industry insights.",
+    description: "Educational content focused on Web & Mobile app development tutorials, Interview Preparation, coding tips, and industry insights.",
     featuredVideos: [
       {
-        title: "Building a Next.js Portfolio from Scratch",
-        url: "https://www.youtube.com/@RowdyCoders",
+        title: "Ultimate Guide to Conquering Frontend Interviews🧑‍💻 - Rowdy Coders🔥💥🌟",
+        url: "https://www.youtube.com/watch?v=O8PWPnSmcR0",
         thumbnail: "https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       },
       {
@@ -123,18 +130,18 @@ export const contentCreationData = {
     description: "Technical articles and tutorials on web development, programming best practices, and industry trends.",
     featuredPosts: [
       {
-        title: "Understanding React Server Components",
-        url: "https://rowdycoders.com/blog",
+        title: "Implement an Event Emitter in JavaScript",
+        url: "https://rowdycoders.com/implement-an-event-emitter-in-javascript",
         date: "June 10, 2023"
       },
       {
-        title: "Building Accessible Web Applications",
-        url: "https://rowdycoders.com/blog",
+        title: "Converting a DOM Object to Real DOM Elements in JavaScript",
+        url: "https://rowdycoders.com/converting-a-dom-object-to-real-dom-elements-in-javascript",
         date: "May 22, 2023"
       },
       {
-        title: "Next.js 13: What's New and Improved",
-        url: "https://rowdycoders.com/blog",
+        title: "Logging Access to Object Properties in JavaScript Using Proxy",
+        url: "https://rowdycoders.com/logging-access-to-object-properties-in-javascript-using-proxy",
         date: "April 15, 2023"
       }
     ]
@@ -143,72 +150,108 @@ export const contentCreationData = {
 
 export const experienceData = [
   {
-    company: "Tech Innovations Inc.",
     position: "Senior Software Engineer",
-    duration: "2020 - Present",
-    description: "Lead development of enterprise web applications, mentoring junior developers, and implementing best practices for code quality and performance.",
+    company: "PalTech",
+    duration: "2024 - Present",
+    location: "Hyderabad",
+    description: "Contributing to the development of mobile app tailored for Service Engineers to effectively manage their daily schedules and tasks, enabling seamless task tracking from assignment to completion.",
+    technologies: ["React Native", "JavaScript", "TypeScript", "Redux", "RealmDB"],
     achievements: [
-      "Reduced load time by 40% through performance optimizations",
-      "Led the migration from legacy systems to modern React architecture",
-      "Implemented CI/CD pipelines improving deployment efficiency by 60%"
+      "Implemented Image, Video compression solutions, optimizing storage and retrieval of media assets to significantly improve app performance",
+      "Developed image editing features allowing engineers to focus specific areas in photos, enhancing user experience by improving visual clarity",
+      "Created background location tracking functionality to monitor engineers' real time locations once tasks are assigned",
+      "Trained organization mobile team extensively on React Native Expo"
     ]
   },
   {
-    company: "WebSolutions LLC",
-    position: "Full Stack Developer",
-    duration: "2017 - 2020",
-    description: "Developed and maintained multiple client applications using React, Node.js, and various databases. Collaborated with UX designers to implement responsive interfaces.",
+    position: "Member of Technical Staff",
+    company: "TechMojo Solutions Pvt Ltd",
+    duration: "2022 - 2024",
+    location: "Hyderabad",
+    description: "Worked on the betting application from scratch, collaborated with seven cross functional teams, leveraging technical and domain expertise to accelerate the onboarding process.",
+    technologies: ["ReactJS", "React Native", "JavaScript", "TypeScript", "Single SPA", "RxJs", "GoLang"],
     achievements: [
-      "Developed RESTful APIs serving 1M+ requests daily",
-      "Created reusable component library reducing development time by 30%",
-      "Implemented automated testing reducing bugs in production by 45%"
+      "Addressed resiliency issues, graceful handling of multiple core components and optimized network calls from 3x to 1x across the app",
+      "Integrated 81 sports into the betting application and integrated top markets for the user to bet on, which generated 80% of the total revenue",
+      "Created Deep links for the entire application in a short deadline, facilitating the creation of Ad widgets",
+      "Got the opportunity to contribute to backend as well"
     ]
   },
   {
-    company: "Digital Creators Co.",
-    position: "Frontend Developer",
-    duration: "2015 - 2017",
-    description: "Built responsive web interfaces and implemented design systems. Collaborated with backend developers to integrate APIs and services.",
+    position: "Associate Software Engineer II",
+    company: "Optum Global Solutions (UnitedHealth Group)",
+    duration: "2020 - 2022",
+    location: "Gurgaon, Haryana",
+    description: "Worked on multiple features like Biometric login, Play/App Store reviews etc.",
+    technologies: ["React Native", "JavaScript", "TypeScript", "Redux", "Java", "Objective C", "Jest", "Appium"],
     achievements: [
-      "Developed company's first design system and component library",
-      "Improved accessibility across all web properties",
-      "Mentored junior developers in modern JavaScript practices"
+      "Got opportunity to contribute to the React Native core component, specifically 'react-native-slider' library",
+      "Wrote native code for both Android & iOS devices, while also overseeing unit, automation testing for the application"
+    ]
+  },
+  {
+    position: "Founder, Full Stack Developer",
+    company: "GrabYourMeals",
+    duration: "2025 - Present",
+    description: "Led the development of a food delivery platform with zero platform fees, serving thousands of users daily. Built both the web platform and mobile application.",
+    achievements: [
+      "Developed and launched the web platform (grabyourmeals.com) using Next.js, TypeScript, and Tailwind CSS",
+      "Created and published the mobile app on Google Play Store using React Native",
+      "Implemented real-time order tracking and delivery status updates",
+      "Integrated secure payment gateways and multiple payment options",
+      "Built a scalable backend system handling thousands of daily orders",
+      "Achieved 4.8+ star rating on Play Store with 10,000+ downloads"
+    ]
+  },
+  {
+    position: "Research Intern (Deep Learning)",
+    company: "Indian Institute of Science, Bangalore",
+    duration: "2019",
+    location: "Bangalore, Karnataka",
+    description: "Worked on various 3D Object Detection methods for Autonomous Driving and implemented Stereo RCNN based 3D object detection algorithm.",
+    technologies: ["Deep Learning", "Computer Vision", "Python", "PyTorch"],
+    achievements: [
+      "This algorithm offers 10x cost advantage than Tesla's Lidar based technology",
+      "Defined future scope and improvements in the algorithm",
+      "Documented the research in an understandable format for newbies",
+      "Got Arctic Code Vault",
+      "Repository: https://github.com/srinu6/Stereo-3D-Object-Detection-for-Autonomous-Driving"
     ]
   }
 ];
 
 export const educationData = [
   {
-    institution: "University of Technology",
-    degree: "Master of Computer Science",
-    duration: "2013 - 2015",
-    description: "Specialized in Web Technologies and Distributed Systems"
+    institution: "National Institute of Technology, Srinagar",
+    degree: "Bachelor of Technology",
+    duration: "2016 - 2020",
+    description: "Completed B.Tech in Computer Science and Engineering"
   },
   {
-    institution: "State University",
-    degree: "Bachelor of Science in Computer Engineering",
-    duration: "2009 - 2013",
-    description: "Graduated with honors, participated in ACM programming competitions"
+    institution: "BIEAP",
+    degree: "Intermediate Education (XI - XII)",
+    duration: "2014 - 2016",
+    description: "Score: 968/1000"
+  },
+  {
+    institution: "BSEAP",
+    degree: "Secondary School Certificate (X)",
+    duration: "2013 - 2014",
+    description: "GPA: 9.5/10"
   }
 ];
 
 export const testimonialsData = [
   {
-    name: "Jane Smith",
-    position: "CTO, Tech Innovations",
+    name: "Manav Mandal",
+    position: "SSE, Optum Global Solutions",
     image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     testimonial: "Srinuvasarao is an exceptional developer who consistently delivers high-quality code. His problem-solving skills and attention to detail make him a valuable asset to any team."
   },
   {
-    name: "Mark Johnson",
-    position: "Product Manager, WebSolutions",
+    name: "Dr SN Omkar",
+    position: "Cheif Research Scientist, IISc Bangalore",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     testimonial: "Working with Srinuvasarao was a pleasure. He not only understood our technical requirements but also provided valuable insights that improved our product significantly."
-  },
-  {
-    name: "Sarah Williams",
-    position: "CEO, Digital Creators",
-    image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    testimonial: "Srinuvasarao's expertise in modern web technologies helped transform our digital presence. His educational content has also been invaluable for our development team."
   }
 ];
