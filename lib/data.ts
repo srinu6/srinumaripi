@@ -58,7 +58,7 @@ export const skillsData = [
 
 export const projectsData = [
   {
-    id: 1,
+    id: 0,
     title: "GrabYourMeals",
     description: "A food delivery platform covering both Web, Mobile apps",
     image: "https://grabyourmeals.com/GrabYourMealsLogo.png",

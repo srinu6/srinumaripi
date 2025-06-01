@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { useSearchParams, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { personalData, experienceData, educationData } from "@/lib/data";
@@ -15,32 +14,32 @@ import {
   Award, 
   CheckCircle 
 } from "lucide-react";
+import { useSearchParams, usePathname } from "next/navigation";
+import { Suspense } from "react";
 
-export default function About() {
+function AboutContent() {
+  const [activeTab, setActiveTab] = useState("about");
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const [activeTab, setActiveTab] = React.useState("about");
 
   useEffect(() => {
+    // Handle URL parameters
+    const tab = searchParams.get("tab");
+    if (tab === "about" || tab === "experience" || tab === "education") {
+      setActiveTab(tab);
+    }
+
     // Handle custom tab change event
     const handleTabChange = (event: CustomEvent) => {
       const { tab } = event.detail;
-      if (tab === "experience" || tab === "education") {
+      if (tab === "about" || tab === "experience" || tab === "education") {
         setActiveTab(tab);
       }
     };
 
-    // Add event listener
-    window.addEventListener('tabChange', handleTabChange as EventListener);
-    
-    // Initial check for URL parameters
-    const tab = searchParams.get("tab");
-    if (tab === "experience" || tab === "education") {
-      setActiveTab(tab);
-    }
-
+    window.addEventListener("tabChange", handleTabChange as EventListener);
     return () => {
-      window.removeEventListener('tabChange', handleTabChange as EventListener);
+      window.removeEventListener("tabChange", handleTabChange as EventListener);
     };
   }, [searchParams]);
 
@@ -175,5 +174,13 @@ export default function About() {
         </motion.div>
       </div>
     </section>
+  );
+}
+
+export default function About() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AboutContent />
+    </Suspense>
   );
 }
