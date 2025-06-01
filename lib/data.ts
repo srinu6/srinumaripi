@@ -1,14 +1,14 @@
 export const personalData = {
-  name: "Srinuvasarao Maripi",
+  name: "Srinu Maripi",
   title: "Senior Software Engineer",
-  email: "contact@srinuvasarao.com", // Replace with actual email
-  phone: "+1 (XXX) XXX-XXXX", // Replace with actual phone
-  location: "San Francisco, CA", // Replace with actual location
-  about: "Senior Software Engineer with extensive experience in full-stack development, specializing in building scalable web applications and creating educational content. Passionate about solving complex problems and sharing knowledge with the developer community.",
+  email: "srinumaripi.nitsri@gmail.com", // Replace with actual email
+  phone: "+91-9014326315", // Replace with actual phone
+  location: "Hyderabad, India", // Replace with actual location
+  about: "Senior Software Engineer with extensive experience in full-stack development, specializing in building scalable Web & Mobile applications and creating educational content. Passionate about solving complex problems and sharing knowledge with the developer community.",
   socialLinks: {
-    github: "https://github.com/yourusername", // Replace with actual GitHub
-    linkedin: "https://linkedin.com/in/yourusername", // Replace with actual LinkedIn
-    twitter: "https://twitter.com/yourusername", // Replace with actual Twitter
+    github: "https://github.com/srinu6", // Replace with actual GitHub
+    linkedin: "https://linkedin.com/in/srinuvasarao-maripi", // Replace with actual LinkedIn
+    twitter: "https://twitter.com/MaripiSri", // Replace with actual Twitter
     youtube: "https://www.youtube.com/@RowdyCoders",
     website: "https://rowdycoders.com/"
   }
@@ -19,33 +19,32 @@ export const skillsData = [
     category: "Frontend",
     skills: [
       { name: "React.js", level: 95 },
-      { name: "Next.js", level: 90 },
-      { name: "TypeScript", level: 85 },
+      { name: "Next.js", level: 95 },
+      { name: "TypeScript", level: 95 },
       { name: "JavaScript", level: 95 },
-      { name: "HTML/CSS", level: 90 },
-      { name: "TailwindCSS", level: 85 }
+      { name: "HTML/CSS", level: 95 },
+      { name: "TailwindCSS", level: 90 }
     ]
   },
   {
     category: "Backend",
     skills: [
       { name: "Node.js", level: 90 },
-      { name: "Express.js", level: 85 },
-      { name: "MongoDB", level: 80 },
-      { name: "PostgreSQL", level: 75 },
+      { name: "Express.js", level: 90 },
+      { name: "MongoDB", level: 90 },
+      { name: "PostgreSQL", level: 90 },
       { name: "REST API", level: 90 },
-      { name: "GraphQL", level: 80 }
     ]
   },
   {
     category: "DevOps & Tools",
     skills: [
       { name: "Docker", level: 75 },
-      { name: "AWS", level: 70 },
+      { name: "AWS", level: 80 },
       { name: "Git", level: 90 },
-      { name: "CI/CD", level: 75 },
-      { name: "Testing", level: 80 },
-      { name: "Performance Optimization", level: 85 }
+      { name: "CI/CD", level: 90 },
+      { name: "Testing", level: 90 },
+      { name: "Performance Optimization", level: 90 }
     ]
   }
 ];
@@ -54,7 +53,7 @@ export const projectsData = [
   {
     id: 1,
     title: "Lycho Seeds",
-    description: "An e-commerce platform for organic seeds with detailed product information, user accounts, and secure checkout.",
+    description: "An e-commerce platform for organic seeds with detailed product information",
     image: "https://images.pexels.com/photos/7728083/pexels-photo-7728083.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     tags: ["Next.js", "React", "TailwindCSS", "Node.js", "MongoDB"],
     liveUrl: "https://www.lychoseeds.com/",
@@ -64,9 +63,9 @@ export const projectsData = [
   {
     id: 2,
     title: "Glory Divine Gallery",
-    description: "A modern art gallery website with advanced filtering, virtual exhibition tours, and artist profiles.",
+    description: "A modern Christian products store with advanced filtering",
     image: "https://images.pexels.com/photos/20384/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    tags: ["React", "Next.js", "TailwindCSS", "Vercel"],
+    tags: ["Next.js", "React", "TailwindCSS", "Node.js", "MongoDB", "AWS"],
     liveUrl: "https://glorydivinegallery.vercel.app/",
     codeUrl: "#", // Replace with actual GitHub repo
     featured: true
@@ -76,7 +75,7 @@ export const projectsData = [
     title: "Rowdy Coders",
     description: "Educational platform providing coding tutorials, articles, and resources for developers of all skill levels.",
     image: "https://images.pexels.com/photos/879109/pexels-photo-879109.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    tags: ["React", "Node.js", "Express", "MongoDB"],
+    tags: ["Wordpress"],
     liveUrl: "https://rowdycoders.com/",
     codeUrl: "#", // Replace with actual GitHub repo
     featured: true
@@ -90,16 +89,6 @@ export const projectsData = [
     liveUrl: "#", // Replace with actual URL
     codeUrl: "#", // Replace with actual GitHub repo
     featured: false
-  },
-  {
-    id: 5,
-    title: "Task Management App",
-    description: "Productivity application for managing tasks, projects, and team collaboration with real-time updates.",
-    image: "https://images.pexels.com/photos/3243/pen-calendar-to-do-checklist.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    tags: ["React", "Firebase", "Material UI", "Redux"],
-    liveUrl: "#", // Replace with actual URL
-    codeUrl: "#", // Replace with actual GitHub repo
-    featured: false
   }
 ];
 
@@ -107,8 +96,8 @@ export const contentCreationData = {
   youtube: {
     channel: "Rowdy Coders",
     url: "https://www.youtube.com/@RowdyCoders",
-    subscribers: "5K+", // Replace with actual number
-    videos: "50+", // Replace with actual number
+    subscribers: "6K+", // Replace with actual number
+    videos: "90+", // Replace with actual number
     description: "Educational content focused on web development tutorials, coding tips, and industry insights.",
     featuredVideos: [
       {
