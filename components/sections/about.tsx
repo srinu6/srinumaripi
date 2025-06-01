@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import { useSearchParams, usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { personalData, experienceData, educationData } from "@/lib/data";
@@ -16,6 +17,33 @@ import {
 } from "lucide-react";
 
 export default function About() {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const [activeTab, setActiveTab] = React.useState("about");
+
+  useEffect(() => {
+    // Handle custom tab change event
+    const handleTabChange = (event: CustomEvent) => {
+      const { tab } = event.detail;
+      if (tab === "experience" || tab === "education") {
+        setActiveTab(tab);
+      }
+    };
+
+    // Add event listener
+    window.addEventListener('tabChange', handleTabChange as EventListener);
+    
+    // Initial check for URL parameters
+    const tab = searchParams.get("tab");
+    if (tab === "experience" || tab === "education") {
+      setActiveTab(tab);
+    }
+
+    return () => {
+      window.removeEventListener('tabChange', handleTabChange as EventListener);
+    };
+  }, [searchParams]);
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -30,40 +58,28 @@ export default function About() {
           align="center"
         />
 
-        <div className="mt-16">
-          <Tabs defaultValue="overview" className="w-full">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+          transition={{ duration: 0.5 }}
+          className="mt-12"
+        >
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="overview" className="flex items-center gap-2">
-                <User className="h-4 w-4" />
-                <span className="hidden sm:inline">Overview</span>
-              </TabsTrigger>
-              <TabsTrigger value="experience" className="flex items-center gap-2">
-                <Briefcase className="h-4 w-4" />
-                <span className="hidden sm:inline">Experience</span>
-              </TabsTrigger>
-              <TabsTrigger value="education" className="flex items-center gap-2">
-                <GraduationCap className="h-4 w-4" />
-                <span className="hidden sm:inline">Education</span>
-              </TabsTrigger>
+              <TabsTrigger value="about">About</TabsTrigger>
+              <TabsTrigger value="experience">Experience</TabsTrigger>
+              <TabsTrigger value="education">Education</TabsTrigger>
             </TabsList>
 
-            {/* Overview Tab */}
-            <TabsContent value="overview">
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                variants={fadeIn}
-                className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
-              >
-                <div>
-                  <h3 className="text-2xl font-bold mb-4">Who I Am</h3>
-                  <p className="text-muted-foreground mb-4">
-                    I'm a Senior Software Engineer with a passion for creating elegant, efficient, and user-friendly web applications. With several years of industry experience, I specialize in full-stack development using modern technologies.
-                  </p>
-                  <p className="text-muted-foreground mb-6">
-                    Beyond coding, I'm dedicated to sharing knowledge through my content creation platform, Rowdy Coders, where I publish tutorials, tips, and insights about web development and programming best practices.
+            {/* About Tab */}
+            <TabsContent value="about" className="space-y-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="space-y-6">
+                  <h3 className="text-2xl font-semibold">Who I Am</h3>
+                  <p className="text-muted-foreground">
+                    {personalData.about}
                   </p>
                   
                   <div className="grid grid-cols-2 gap-4 mt-6">
@@ -95,141 +111,68 @@ export default function About() {
                     className="object-cover"
                   />
                 </div>
-              </motion.div>
+              </div>
             </TabsContent>
 
             {/* Experience Tab */}
-            <TabsContent value="experience">
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, staggerChildren: 0.1 }}
-                variants={fadeIn}
-                className="space-y-6"
-              >
-                <h3 className="text-2xl font-bold mb-6">Work Experience</h3>
-                
-                <div className="space-y-6">
-                  {experienceData.map((item, index) => (
-                    <motion.div 
-                      key={index}
-                      variants={fadeIn}
-                      transition={{ delay: index * 0.1 }}
-                      className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-border"
-                    >
-                      <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-primary/20 border-2 border-primary -translate-x-1/2 flex items-center justify-center">
-                        <Briefcase className="h-3 w-3 text-primary" />
+            <TabsContent value="experience" className="space-y-8">
+              <div className="space-y-6">
+                {experienceData.map((experience, index) => (
+                  <Card key={index}>
+                    <CardHeader>
+                      <div className="flex items-center gap-4">
+                        <div className="bg-primary/10 p-3 rounded-full">
+                          <Briefcase className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <CardTitle>{experience.position}</CardTitle>
+                          <p className="text-muted-foreground">{experience.company}</p>
+                          <p className="text-sm text-muted-foreground">{experience.duration}</p>
+                        </div>
                       </div>
-                      
-                      <Card className="overflow-hidden">
-                        <CardHeader className="pb-2">
-                          <div className="flex justify-between items-start flex-wrap gap-2">
-                            <CardTitle className="text-xl">{item.position}</CardTitle>
-                            <span className="text-sm px-2 py-1 bg-primary/10 text-primary rounded-md">
-                              {item.duration}
-                            </span>
-                          </div>
-                          <p className="text-muted-foreground">{item.company}</p>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="mb-3">{item.description}</p>
-                          <h4 className="font-medium mb-2">Key Achievements:</h4>
-                          <ul className="space-y-1">
-                            {item.achievements.map((achievement, i) => (
-                              <li key={i} className="flex items-start gap-2">
-                                <CheckCircle className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                                <span className="text-muted-foreground">{achievement}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">{experience.description}</p>
+                      <ul className="space-y-2">
+                        {experience.achievements.map((achievement, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
+                            <span>{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </TabsContent>
 
             {/* Education Tab */}
-            <TabsContent value="education">
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                variants={fadeIn}
-                className="space-y-6"
-              >
-                <h3 className="text-2xl font-bold mb-6">Education & Certifications</h3>
-                
-                <div className="space-y-6">
-                  {educationData.map((item, index) => (
-                    <motion.div 
-                      key={index}
-                      variants={fadeIn}
-                      transition={{ delay: index * 0.1 }}
-                      className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-border"
-                    >
-                      <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-primary/20 border-2 border-primary -translate-x-1/2 flex items-center justify-center">
-                        <GraduationCap className="h-3 w-3 text-primary" />
+            <TabsContent value="education" className="space-y-8">
+              <div className="space-y-6">
+                {educationData.map((education, index) => (
+                  <Card key={index}>
+                    <CardHeader>
+                      <div className="flex items-center gap-4">
+                        <div className="bg-primary/10 p-3 rounded-full">
+                          <GraduationCap className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <CardTitle>{education.degree}</CardTitle>
+                          <p className="text-muted-foreground">{education.institution}</p>
+                          <p className="text-sm text-muted-foreground">{education.duration}</p>
+                        </div>
                       </div>
-                      
-                      <Card className="overflow-hidden">
-                        <CardHeader className="pb-2">
-                          <div className="flex justify-between items-start flex-wrap gap-2">
-                            <CardTitle className="text-xl">{item.degree}</CardTitle>
-                            <span className="text-sm px-2 py-1 bg-primary/10 text-primary rounded-md">
-                              {item.duration}
-                            </span>
-                          </div>
-                          <p className="text-muted-foreground">{item.institution}</p>
-                        </CardHeader>
-                        <CardContent>
-                          <p>{item.description}</p>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
-                </div>
-                
-                {/* Certifications Section */}
-                <div className="mt-10">
-                  <h3 className="text-xl font-bold mb-4">Certifications</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <Card className="bg-muted/50">
-                      <CardContent className="pt-6 flex items-center gap-3">
-                        <Award className="h-8 w-8 text-primary" />
-                        <div>
-                          <h4 className="font-medium">AWS Certified Developer</h4>
-                          <p className="text-sm text-muted-foreground">Amazon Web Services</p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                    <Card className="bg-muted/50">
-                      <CardContent className="pt-6 flex items-center gap-3">
-                        <Award className="h-8 w-8 text-primary" />
-                        <div>
-                          <h4 className="font-medium">Professional Frontend Developer</h4>
-                          <p className="text-sm text-muted-foreground">Meta</p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                    <Card className="bg-muted/50">
-                      <CardContent className="pt-6 flex items-center gap-3">
-                        <Award className="h-8 w-8 text-primary" />
-                        <div>
-                          <h4 className="font-medium">MongoDB Certified Developer</h4>
-                          <p className="text-sm text-muted-foreground">MongoDB University</p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              </motion.div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground">{education.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </TabsContent>
           </Tabs>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

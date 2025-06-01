@@ -2,10 +2,12 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown, Github, Linkedin, Mail, Youtube } from "lucide-react";
 import { personalData } from "@/lib/data";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export default function Hero() {
   return (
@@ -103,8 +105,10 @@ export default function Hero() {
           >
             <div className="relative w-full aspect-square rounded-full bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 p-4">
               <div className="absolute inset-4 rounded-full bg-muted flex items-center justify-center overflow-hidden">
-                {/* You can replace this with an actual image later */}
-                <div className="text-6xl font-bold text-primary/20">SM</div>
+                <Avatar className="w-full h-full">
+                  <AvatarImage src='/dp.JPG' alt={personalData.name} />
+                  <AvatarFallback>{personalData.name.split(" ").map(n => n[0]).join("")}</AvatarFallback>
+                </Avatar>
               </div>
             </div>
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-xl" />

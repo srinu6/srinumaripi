@@ -12,7 +12,8 @@ import { useTheme } from "next-themes";
 const navLinks = [
   { name: "Home", path: "#home" },
   { name: "About", path: "#about" },
-  { name: "Experience", path: "#experience" },
+  { name: "Experience", path: "#about?tab=experience" },
+  { name: "Education", path: "#about?tab=education" },
   { name: "Projects", path: "#projects" },
   { name: "Content", path: "#content" },
   { name: "Contact", path: "#contact" },
@@ -52,6 +53,22 @@ export default function Navbar() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  const handleNavigation = (path: string) => {
+    closeMobileMenu();
+    const [hash, search] = path.split('?');
+    const element = document.querySelector(hash);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      // Update URL without page reload
+      window.history.pushState(null, '', path);
+      // Dispatch a custom event for tab switching
+      if (search) {
+        const tab = search.split('=')[1];
+        window.dispatchEvent(new CustomEvent('tabChange', { detail: { tab } }));
+      }
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -74,14 +91,13 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
+              <button
                 key={link.name}
-                href={link.path}
+                onClick={() => handleNavigation(link.path)}
                 className={`text-sm font-medium transition-colors hover:text-primary`}
-                onClick={closeMobileMenu}
               >
                 {link.name}
-              </Link>
+              </button>
             ))}
             <Button
               variant="outline"
@@ -139,14 +155,13 @@ export default function Navbar() {
         >
           <nav className="flex flex-col space-y-4">
             {navLinks.map((link) => (
-              <Link
+              <button
                 key={link.name}
-                href={link.path}
-                className={`text-base font-medium transition-colors hover:text-primary py-2`}
-                onClick={closeMobileMenu}
+                onClick={() => handleNavigation(link.path)}
+                className={`text-base font-medium transition-colors hover:text-primary py-2 text-left`}
               >
                 {link.name}
-              </Link>
+              </button>
             ))}
             <Button asChild className="mt-2">
               <Link href="#contact" onClick={closeMobileMenu}>
