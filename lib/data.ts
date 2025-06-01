@@ -81,9 +81,9 @@ export const projectsData = [
     id: 2,
     title: "Glory Divine Gallery",
     description: "A modern Christian products store with advanced filtering",
-    image: "https://glorydivinegallery.vercel.app/logo.png",
+    image: "https://glorydivinegallery.com/logo.png",
     tags: ["Next.js", "React", "TailwindCSS", "Node.js", "MongoDB", "AWS"],
-    liveUrl: "https://glorydivinegallery.vercel.app/",
+    liveUrl: "https://glorydivinegallery.com/",
     codeUrl: "#", // Replace with actual GitHub repo
     featured: true
   },
