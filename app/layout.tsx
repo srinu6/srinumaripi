@@ -108,14 +108,6 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={metadata.description?.toString() || ''} />
         <meta name="keywords" content={keywords} />
-        <meta property="og:type" content={metadata.openGraph?.type?.toString() || 'website'} />
-        <meta property="og:title" content={metadata.openGraph?.title?.toString() || ''} />
-        <meta property="og:description" content={metadata.openGraph?.description?.toString() || ''} />
-        <meta property="og:image" content={metadata.openGraph?.images?.[0]?.url?.toString() || ''} />
-        <meta name="twitter:card" content={metadata.twitter?.card?.toString() || 'summary_large_image'} />
-        <meta name="twitter:title" content={metadata.twitter?.title?.toString() || ''} />
-        <meta name="twitter:description" content={metadata.twitter?.description?.toString() || ''} />
-        <meta name="twitter:image" content={metadata.twitter?.images?.[0]?.toString() || ''} />
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
