@@ -111,7 +111,7 @@ export const projectsData = [
     title: "Connecting Freshers",
     description: "A Platform to connect freshers to seniors. Presented Connecting Freshers in the IDEA CHALLENGE 2017(National Level Competition) at NIT Srinagar, developed an application from scratch, got it funded by NIT Srinagar",
     image: "https://www.srinumaripi.tech/cf.jpg",
-    tags: ["ReactJS"],
+    tags: ["Wordpress, HTML, CSS, Javascript, PHP, MySQL"],
     liveUrl: "https://connectingfreshers.com/about/",
     featured: true
   },
