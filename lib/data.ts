@@ -68,7 +68,6 @@ export const projectsData = [
     image: "https://grabyourmeals.com/GrabYourMealsLogo.png",
     tags: ["React Native", "Next.js", "TailwindCSS", "Node.js", "ExpressJS", "MongoDB"],
     liveUrl: "https://www.lychoseeds.com/",
-    codeUrl: "#", // Replace with actual GitHub repo
     featured: true
   },
   {
@@ -78,7 +77,6 @@ export const projectsData = [
     image: "https://www.lychoseeds.com/lychoseeds.png",
     tags: ["Next.js", "React", "TailwindCSS", "Node.js", "MongoDB"],
     liveUrl: "https://www.lychoseeds.com/",
-    codeUrl: "#", // Replace with actual GitHub repo
     featured: true
   },
   {
@@ -88,7 +86,6 @@ export const projectsData = [
     image: "https://glorydivinegallery.com/logo.png",
     tags: ["Next.js", "React", "TailwindCSS", "Node.js", "MongoDB", "AWS"],
     liveUrl: "https://glorydivinegallery.com/",
-    codeUrl: "#", // Replace with actual GitHub repo
     featured: true
   },
   {
@@ -98,7 +95,6 @@ export const projectsData = [
     image: "https://rowdycoders.com/wp-content/uploads/logo.png",
     tags: ["Wordpress"],
     liveUrl: "https://rowdycoders.com/",
-    codeUrl: "#", // Replace with actual GitHub repo
     featured: true
   },
   {
@@ -108,7 +104,6 @@ export const projectsData = [
     image: "https://uniwearse-frontend.vercel.app/static/media/logo.c802eb8d3d097f630edb.png",
     tags: ["ReactJS"],
     liveUrl: "https://uniwearse-frontend.vercel.app/",
-    codeUrl: "#", // Replace with actual GitHub repo
     featured: true
   },
   {
@@ -118,7 +113,6 @@ export const projectsData = [
     image: "https://www.srinumaripi.tech/cf.png",
     tags: ["ReactJS"],
     liveUrl: "https://connectingfreshers.com/about/",
-    codeUrl: "#", // Replace with actual GitHub repo
     featured: true
   },
 ];
@@ -142,9 +136,9 @@ export const contentCreationData = {
         thumbnail: "https://www.srinumaripi.tech/javascriptquestions.png"
       },
       {
-        title: "Mastering TailwindCSS in 2023",
-        url: "https://www.youtube.com/@RowdyCoders",
-        thumbnail: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        title: "JavaScript Visualized - Promise, setTimeout and CallStack || Must Watch🤯😱",
+        url: "https://youtu.be/Pp9Ir8iZsFA?si=gtCNRVlcz92cMM6I",
+        thumbnail: "https://www.srinumaripi.tech/es6.jpeg"
       }
     ]
   },
