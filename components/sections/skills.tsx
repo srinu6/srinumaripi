@@ -88,13 +88,13 @@ export default function Skills() {
         >
           <Card className="bg-muted/50">
             <CardContent className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">10+</div>
+              <div className="text-3xl font-bold text-primary mb-2">20+</div>
               <div className="text-sm text-muted-foreground">Technologies</div>
             </CardContent>
           </Card>
           <Card className="bg-muted/50">
             <CardContent className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">50+</div>
+              <div className="text-3xl font-bold text-primary mb-2">15+</div>
               <div className="text-sm text-muted-foreground">Projects</div>
             </CardContent>
           </Card>
@@ -106,7 +106,7 @@ export default function Skills() {
           </Card>
           <Card className="bg-muted/50">
             <CardContent className="p-6 text-center">
-              <div className="text-3xl font-bold text-primary mb-2">3</div>
+              <div className="text-3xl font-bold text-primary mb-2">1</div>
               <div className="text-sm text-muted-foreground">Team Lead Roles</div>
             </CardContent>
           </Card>

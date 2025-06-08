@@ -91,11 +91,11 @@ function AboutContent() {
                       <div className="text-sm text-muted-foreground">Projects Completed</div>
                     </div>
                     <div className="bg-muted p-4 rounded-lg">
-                      <div className="text-3xl font-bold text-primary mb-1">50+</div>
+                      <div className="text-3xl font-bold text-primary mb-1">90+</div>
                       <div className="text-sm text-muted-foreground">Tutorial Videos</div>
                     </div>
                     <div className="bg-muted p-4 rounded-lg">
-                      <div className="text-3xl font-bold text-primary mb-1">3</div>
+                      <div className="text-3xl font-bold text-primary mb-1">5</div>
                       <div className="text-sm text-muted-foreground">Major Websites</div>
                     </div>
                   </div>

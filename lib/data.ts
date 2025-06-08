@@ -8,7 +8,7 @@ export const personalData = {
 deploying scalable web and mobile applications. Successfully published
 production-ready apps to Play Store, developed SEO-friendly web apps, and
 deployed high-performance backend services. Proficient in React, React
-Native, Next.js, Node.js, and Express.js, with hands-on experience in AWS
+Native, Next.js, Node.js, Express.js and Nest.js, with hands-on experience in AWS
 for cloud deployments and infrastructure management. Passionate about
 delivering clean, maintainable code and building end-to-end solutions that are
 user-centric and business-focused.`,
@@ -39,6 +39,8 @@ export const skillsData = [
     skills: [
       { name: "Node.js", level: 90 },
       { name: "Express.js", level: 90 },
+      { name: "Nest.js", level: 90 },
+      { name: "Java", level: 70 },
       { name: "MongoDB", level: 90 },
       { name: "PostgreSQL", level: 90 },
       { name: "REST API", level: 90 },
@@ -51,6 +53,8 @@ export const skillsData = [
       { name: "AWS", level: 80 },
       { name: "Git", level: 90 },
       { name: "CI/CD", level: 90 },
+      { name: "Figma", level: 90 },
+      { name: "Swagger", level: 90 },
       { name: "Performance Optimization", level: 90 }
     ]
   }
@@ -80,7 +84,7 @@ export const projectsData = [
   {
     id: 2,
     title: "Glory Divine Gallery",
-    description: "A modern Christian products store with advanced filtering",
+    description: "A modern Christian products store with advanced filtering and Admin Portal",
     image: "https://glorydivinegallery.com/logo.png",
     tags: ["Next.js", "React", "TailwindCSS", "Node.js", "MongoDB", "AWS"],
     liveUrl: "https://glorydivinegallery.com/",
@@ -96,7 +100,27 @@ export const projectsData = [
     liveUrl: "https://rowdycoders.com/",
     codeUrl: "#", // Replace with actual GitHub repo
     featured: true
-  }
+  },
+  {
+    id: 4,
+    title: "Uniwearse",
+    description: "A platform where fashion lovers can buy and sell pre-loved clothing, we're building a community that values sustainability, style, and smart consumption.",
+    image: "https://uniwearse-frontend.vercel.app/static/media/logo.c802eb8d3d097f630edb.png",
+    tags: ["ReactJS"],
+    liveUrl: "https://uniwearse-frontend.vercel.app/",
+    codeUrl: "#", // Replace with actual GitHub repo
+    featured: true
+  },
+  {
+    id: 5,
+    title: "Connecting Freshers",
+    description: "A Platform to connect freshers to seniors. Presented Connecting Freshers in the IDEA CHALLENGE 2017(National Level Competition) at NIT Srinagar, developed an application from scratch, got it funded by NIT Srinagar",
+    image: "https://www.srinumaripi.tech/cf.png",
+    tags: ["ReactJS"],
+    liveUrl: "https://connectingfreshers.com/about/",
+    codeUrl: "#", // Replace with actual GitHub repo
+    featured: true
+  },
 ];
 
 export const contentCreationData = {
@@ -113,9 +137,9 @@ export const contentCreationData = {
         thumbnail: "https://images.pexels.com/photos/4974915/pexels-photo-4974915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       },
       {
-        title: "Advanced React Hooks Tutorial",
-        url: "https://www.youtube.com/@RowdyCoders",
-        thumbnail: "https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        title: "Top 50 Most Asked JavaScript Logical Interview Questions",
+        url: "https://youtu.be/65slMcTFSMM?si=W_f7vKcZRuLqn4gv",
+        thumbnail: "https://www.srinumaripi.tech/javascriptquestions.png"
       },
       {
         title: "Mastering TailwindCSS in 2023",
@@ -126,23 +150,23 @@ export const contentCreationData = {
   },
   blog: {
     title: "Rowdy Coders Blog",
-    url: "https://rowdycoders.com/blog",
+    url: "https://rowdycoders.com",
     description: "Technical articles and tutorials on web development, programming best practices, and industry trends.",
     featuredPosts: [
       {
         title: "Implement an Event Emitter in JavaScript",
         url: "https://rowdycoders.com/implement-an-event-emitter-in-javascript",
-        date: "June 10, 2023"
+        date: "May 27, 2024"
       },
       {
         title: "Converting a DOM Object to Real DOM Elements in JavaScript",
         url: "https://rowdycoders.com/converting-a-dom-object-to-real-dom-elements-in-javascript",
-        date: "May 22, 2023"
+        date: "February 25, 2025"
       },
       {
         title: "Logging Access to Object Properties in JavaScript Using Proxy",
         url: "https://rowdycoders.com/logging-access-to-object-properties-in-javascript-using-proxy",
-        date: "April 15, 2023"
+        date: "February 8, 2025"
       }
     ]
   }
