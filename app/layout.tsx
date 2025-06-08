@@ -93,6 +93,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const keywords = Array.isArray(metadata.keywords) 
+    ? metadata.keywords.join(', ')
+    : metadata.keywords?.toString() || '';
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -103,7 +107,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={metadata.description?.toString() || ''} />
-        <meta name="keywords" content={metadata.keywords?.join(', ') || ''} />
+        <meta name="keywords" content={keywords} />
         <meta property="og:type" content={metadata.openGraph?.type?.toString() || 'website'} />
         <meta property="og:title" content={metadata.openGraph?.title?.toString() || ''} />
         <meta property="og:description" content={metadata.openGraph?.description?.toString() || ''} />
