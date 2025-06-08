@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/cv.pdf`,
+      url: `${baseUrl}/resume.pdf`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
