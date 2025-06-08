@@ -60,7 +60,18 @@ export const skillsData = [
   }
 ];
 
-export const projectsData = [
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  liveUrl: string;
+  codeUrl?: string;
+  featured: boolean;
+}
+
+export const projectsData: Project[] = [
   {
     id: 0,
     title: "GrabYourMeals",
@@ -68,6 +79,7 @@ export const projectsData = [
     image: "https://grabyourmeals.com/GrabYourMealsLogo.png",
     tags: ["React Native", "Next.js", "TailwindCSS", "Node.js", "ExpressJS", "MongoDB"],
     liveUrl: "https://www.lychoseeds.com/",
+    codeUrl: "",
     featured: true
   },
   {
@@ -77,6 +89,7 @@ export const projectsData = [
     image: "https://www.lychoseeds.com/lychoseeds.png",
     tags: ["Next.js", "React", "TailwindCSS", "Node.js", "MongoDB"],
     liveUrl: "https://www.lychoseeds.com/",
+    codeUrl: "",
     featured: true
   },
   {
@@ -86,6 +99,7 @@ export const projectsData = [
     image: "https://glorydivinegallery.com/logo.png",
     tags: ["Next.js", "React", "TailwindCSS", "Node.js", "MongoDB", "AWS"],
     liveUrl: "https://glorydivinegallery.com/",
+    codeUrl: "",
     featured: true
   },
   {
@@ -95,6 +109,7 @@ export const projectsData = [
     image: "https://rowdycoders.com/wp-content/uploads/logo.png",
     tags: ["Wordpress"],
     liveUrl: "https://rowdycoders.com/",
+    codeUrl: "",
     featured: true
   },
   {
@@ -104,6 +119,7 @@ export const projectsData = [
     image: "https://uniwearse-frontend.vercel.app/static/media/logo.c802eb8d3d097f630edb.png",
     tags: ["ReactJS"],
     liveUrl: "https://uniwearse-frontend.vercel.app/",
+    codeUrl: "",
     featured: true
   },
   {
@@ -113,6 +129,7 @@ export const projectsData = [
     image: "https://www.srinumaripi.tech/cf.jpg",
     tags: ["Wordpress, HTML, CSS, Javascript, PHP, MySQL"],
     liveUrl: "https://connectingfreshers.com/about/",
+    codeUrl: "",
     featured: true
   },
 ];
