@@ -38,11 +38,11 @@ export default function Projects() {
               transition={{ delay: index * 0.1 }}
             >
               <Card className="h-full flex flex-col">
-                <div className="relative h-48 overflow-hidden rounded-t-lg">
+                <div className="relative aspect-square overflow-hidden rounded-t-lg">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
                 <CardHeader>

@@ -125,9 +125,9 @@ export const projectsData: Project[] = [
   {
     id: 5,
     title: "Connecting Freshers",
-    description: "A Platform to connect freshers to seniors. Presented Connecting Freshers in the IDEA CHALLENGE 2017(National Level Competition) at NIT Srinagar, developed an application from scratch, got it funded by NIT Srinagar",
+    description: "A Platform to connect freshers to seniors. Presented Connecting Freshers in the IDEA CHALLENGE 2017(National Level Competition) at NIT Srinagar, got it funded by NIT.",
     image: "https://www.srinumaripi.tech/cf.jpg",
-    tags: ["Wordpress", "HTML", "CSS", "Javascript", "PHP", "MySQL"],
+    tags: ["Wordpress", "Javascript", "PHP", "MySQL"],
     liveUrl: "https://connectingfreshers.com/about/",
     codeUrl: "",
     featured: true
@@ -260,7 +260,7 @@ export const educationData = [
     institution: "National Institute of Technology, Srinagar",
     degree: "Bachelor of Technology",
     duration: "2016 - 2020",
-    description: "Completed B.Tech in Computer Science and Engineering"
+    description: "Graduated with a B.Tech from NIT Srinagar, building a strong foundation in core engineering. In the final year, selected as a research intern at the Indian Institute of Science (IISc), Bangalore, where I explored cutting-edge deep learning techniques for autonomous aerial vehicles"
   },
   {
     institution: "BIEAP",
