@@ -26,6 +26,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
 
@@ -52,15 +53,17 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error("Failed to send message");
+        throw new Error(data.error || data.details || "Failed to send message");
       }
 
       toast.success("Message sent successfully! I'll get back to you soon.");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
-      toast.error("Failed to send message. Please try again later.");
       console.error("Error sending message:", error);
+      toast.error(error instanceof Error ? error.message : "Failed to send message. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }
@@ -92,9 +95,9 @@ export default function Contact() {
           <div className="space-y-8">
             <h3 className="text-2xl font-bold">Get In Touch</h3>
             <p className="text-muted-foreground">
-              I'm currently open to freelance opportunities, collaborations, and 
+              I&apos;m currently open to freelance opportunities, collaborations, and 
               interesting projects. Whether you have a question or just want to say hi, 
-              I'll try my best to get back to you!
+              I&apos;ll try my best to get back to you!
             </p>
 
             <div className="space-y-4 mt-8">
@@ -214,6 +217,9 @@ export default function Contact() {
                     </label>
                     <Input
                       id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
                       placeholder="Subject of your message"
                       required
                     />
