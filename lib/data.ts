@@ -43,7 +43,6 @@ export const skillsData = [
       { name: "Java", level: 70 },
       { name: "MongoDB", level: 90 },
       { name: "PostgreSQL", level: 90 },
-      { name: "REST API", level: 90 },
     ]
   },
   {

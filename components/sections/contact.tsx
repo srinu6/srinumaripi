@@ -45,15 +45,37 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
+      console.log('Sending request with data:', formData);
+      
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      // Log the raw response for debugging
+      console.log('Response status:', response.status);
+      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+
+      // Get the response text first
+      const text = await response.text();
+      console.log('Raw response text:', text);
+
+      // Try to parse as JSON if we have content
+      let data;
+      if (text) {
+        try {
+          data = JSON.parse(text);
+        } catch (jsonError) {
+          console.error('Error parsing JSON:', jsonError);
+          throw new Error('Invalid response from server');
+        }
+      } else {
+        throw new Error('Empty response from server');
+      }
 
       if (!response.ok) {
         throw new Error(data.error || data.details || "Failed to send message");
