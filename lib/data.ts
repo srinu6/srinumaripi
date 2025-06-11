@@ -78,7 +78,7 @@ export const projectsData: Project[] = [
     description: "A food delivery platform covering both Web, Mobile apps",
     image: "https://grabyourmeals.com/GrabYourMealsLogo.png",
     tags: ["React Native", "Next.js", "TailwindCSS", "Node.js", "ExpressJS", "MongoDB"],
-    liveUrl: "https://www.lychoseeds.com/",
+    liveUrl: "https://grabyourmeals.com/",
     codeUrl: "",
     featured: true
   },
